@@ -16,9 +16,11 @@ namespace API.Controllers
     public class AccountController : BaseApiController
     {
         private readonly DataContext _context;
-        private ITokenService _tokenService { get; }
+        private readonly ITokenService _tokenService;
+
         public AccountController(DataContext context, ITokenService tokenService)
         {
+            _tokenService = tokenService;
             _tokenService = tokenService;
             _context = context;
         }
@@ -33,7 +35,7 @@ namespace API.Controllers
             var user = new AppUser
             {
                 UserName = registerDto.Username.ToLower(),
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.password)),
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
 
