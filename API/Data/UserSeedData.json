@@ -165,7 +165,7 @@
         "Country": "Madagascar",
         "Photos": [{
             "Url": "https://library.sportingnews.com/2023-01/GettyImages-1454058933_1.jpg",
-            "IsMain": true
+            "IsMain": false
         }]
     }
 ]
