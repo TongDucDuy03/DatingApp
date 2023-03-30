@@ -12,5 +12,7 @@ export class ServerErrorComponent {
     const navigation = this.router.getCurrentNavigation();
     this.error = navigation?.extras?.state?.error;
   }
+  ngOnInit():void{
 
+  }
 }
